@@ -1,5 +1,3 @@
-// CodeGenerator.js
-
 import React, { useState, useEffect } from 'react';
 import './CodeGenerator.css'; // Update the path to your CSS file
 import colorNameList from 'color-name-list';
@@ -170,6 +168,9 @@ function hexToHsl(hex) {
       case r: h = (g - b) / d + (g < b ? 6 : 0); break;
       case g: h = (b - r) / d + 2; break;
       case b: h = (r - g) / d + 4; break;
+      default:
+        // Handle unexpected values
+        break;
     }
 
     h /= 6;

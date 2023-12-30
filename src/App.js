@@ -84,7 +84,7 @@ const Colorx = () => {
 
       {/* Main Ribbon */}
       <div className="ribbon">
-        <h2>Colorx: Become Creative With Colors</h2>
+        <h2 style={{ paddingTop: '2px' }}>Colorx: Become Creative With Colors</h2>
         <p>
           Colorx is the ultimate color platform that provides a one-stop solution for all your color needs.
         </p>

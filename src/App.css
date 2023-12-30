@@ -7,7 +7,7 @@ body {
 }
 
 .app-container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid #000435;
   display: flex;
@@ -50,11 +50,11 @@ body {
   color: #ffffff;
   text-align: center;
   padding: 5px;
-  height: 90px;
+  height: 140px;
 }
 
 .ribbon h2 {
-  margin-bottom: 2px; /* Add some spacing between heading and paragraph */
+  margin-bottom: 1px; /* Add some spacing between heading and paragraph */
 }
 
 @keyframes paletteAnimation {

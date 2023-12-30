@@ -47,24 +47,20 @@ const ColorInfo = () => {
   };
 
   return (
-    <div className="color-info-page-container" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      {/* Color Animations Container */}
-      <div className="color-animations-container">
-        <div className="color-gradient-animation"></div>
-      </div>
-
+    <div className="color-info-page-container">
       {/* Color Info Container */}
       <div className="color-info-container">
         <h2 style={{ textAlign: 'center' }}>Color Information</h2>
-        <label>
-          Enter color name or code:
-          <input
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder="Enter name or HEX code"
-          />
-        </label>
+        <p style={{ textAlign: 'center', marginBottom: '10px' }}>
+          Explore the details of a color by entering its name or HEX code below.
+        </p>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Enter name or HEX code"
+          style={{ width: '100%', padding: '8px' }}
+        />
         {displayColor && (
           <div className="color-display" style={{ backgroundColor: displayColor }}></div>
         )}

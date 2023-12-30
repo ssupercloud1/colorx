@@ -2,10 +2,10 @@
 
 .colorx-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   overflow-x: auto;
   border-radius: 5px;
   border: 1px solid #ccc;

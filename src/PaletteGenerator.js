@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ColorNames from './ColorNames';
 import './PaletteGenerator.css';
 import chroma from 'chroma-js';
@@ -10,11 +10,7 @@ const PaletteGenerator = () => {
   const [manualColors, setManualColors] = useState('');
   const paletteRef = useRef(null);
 
-  useEffect(() => {
-    generatePalette();
-  }, [numColors]);
-
-  const generatePalette = () => {
+  const generatePalette = useCallback(() => {
     if (manualColors.trim() !== '') {
       const enteredColors = manualColors.split(',').map((color) => color.trim());
       setPaletteColors(
@@ -35,7 +31,11 @@ const PaletteGenerator = () => {
 
       setPaletteColors(adjustedColors);
     }
-  };
+  }, [manualColors, numColors]);
+
+  useEffect(() => {
+    generatePalette();
+  }, [numColors, generatePalette]);
 
   const shuffleArray = (array) => {
     const shuffledArray = [...array];
@@ -74,8 +74,9 @@ const PaletteGenerator = () => {
   return (
     <div className="palette-generator-container">
       <h2 style={{ textAlign: 'center' }}>Palette Generator</h2>
-	  <p>With Colorx, you can generate a color palette by simply entering the number of colors you want and hitting the ‘Generate Palette’ button. Most importantly, you can easily download your palette as a PNG file.
-	  </p>
+      <p>
+        With Colorx, you can generate a color palette by simply entering the number of colors you want and hitting the ‘Generate Palette’ button. Most importantly, you can easily download your palette as a PNG file.
+      </p>
       <div className="palette-options">
         <label>
           Number of Colors:
@@ -96,8 +97,8 @@ const PaletteGenerator = () => {
             onChange={handleManualColorsChange}
           />
         </label>
-        <button onClick={handleGeneratePalette}>Generate Palette</button>
-        <button onClick={handleExportPNG}>Export as PNG</button>
+        <button onClick={handleGeneratePalette}>Generate</button>
+        <button onClick={handleExportPNG}>Export</button>
       </div>
       <div className="palette" ref={paletteRef}>
         {paletteColors.map(([, colorCode]) => (

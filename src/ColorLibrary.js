@@ -8,25 +8,25 @@ const ColorLibrary = () => {
   const [visibleColors, setVisibleColors] = useState(20);
 
   useEffect(() => {
+    const sortColorEntries = (entries) => {
+      return entries.sort((a, b) => {
+        const nameA = a[0].toLowerCase();
+        const nameB = b[0].toLowerCase();
+
+        if (sortOrder === 'ascending') {
+          return nameA.localeCompare(nameB);
+        } else if (sortOrder === 'descending') {
+          return nameB.localeCompare(nameA);
+        } else {
+          return Math.random() - 0.5; // Random order
+        }
+      });
+    };
+
     const colorEntries = Object.entries(ColorNames);
     const sortedEntries = sortColorEntries(colorEntries);
     setSortedColors(sortedEntries);
   }, [sortOrder]);
-
-  const sortColorEntries = (entries) => {
-    return entries.sort((a, b) => {
-      const nameA = a[0].toLowerCase();
-      const nameB = b[0].toLowerCase();
-
-      if (sortOrder === 'ascending') {
-        return nameA.localeCompare(nameB);
-      } else if (sortOrder === 'descending') {
-        return nameB.localeCompare(nameA);
-      } else {
-        return Math.random() - 0.5; // Random order
-      }
-    });
-  };
 
   const handleSortOrderChange = (newOrder) => {
     setSortOrder(newOrder);
