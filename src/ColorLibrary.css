@@ -1,0 +1,30 @@
+/* ColorLibrary.css */
+
+.color-library-container {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  max-width: 90%;
+  margin: auto;
+  overflow: auto;
+}
+
+.color-rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 1px;
+  margin: auto;
+}
+
+.color-item {
+  width: calc(20% - 20px); /* Adjust the width as needed for 5 items per row */
+  text-align: center;
+  margin-right: 1px;
+}
+
+@media (max-width: 768px) {
+  .color-item {
+    width: calc(50% - 20px); /* Adjust the width for smaller screens */
+  }
+}

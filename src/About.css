@@ -1,0 +1,81 @@
+/* About.css */
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-container h2 {
+  color: #000435;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  flex: 1;
+  max-width: 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+.color-animation {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.color-code-generator {
+  background-color: #3498db;
+  animation: colorAnimation 2s infinite alternate;
+}
+
+.palette-generator {
+  background-color: #e74c3c;
+  animation: colorAnimation 2s infinite alternate;
+}
+
+.color-info {
+  background-color: #2ecc71;
+  animation: colorAnimation 2s infinite alternate;
+}
+
+.color-library {
+  background-color: #f39c12;
+  animation: colorAnimation 2s infinite alternate;
+}
+
+@keyframes colorAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.feature h3 {
+  color: #000435;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #333;
+  font-size: 1em;
+}

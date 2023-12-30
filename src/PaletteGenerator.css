@@ -1,0 +1,52 @@
+/* PaletteGenerator.css */
+
+.palette-generator-container {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  max-width: 80%;
+  margin: auto;
+  overflow: auto;
+}
+
+.palette-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.palette {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.palette-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px; /* Add some spacing between colors */
+}
+.palette-color div {
+  font-size: 14px; /* Decrease the size of color codes */
+}
+
+.color-display {
+  width: 20px; /* Decrease width of each color */
+  height: 80px; /* Increase height of each color */
+  
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .palette-color {
+    margin-right: 1px; /* Reduce margin between colors on smaller screens */
+  }
+
+  .color-display {
+    width: 30px; /* Adjust the width of each color on smaller screens */
+    height: 30px;
+  }
+}

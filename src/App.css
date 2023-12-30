@@ -1,38 +1,111 @@
-.App {
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #000435;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #ffffff;
+  color: #000435;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  height: 30px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align text to the right */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000435;
+  margin: 5px;
+  padding: 5px;
+}
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.ribbon {
+  background-color: #000435;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  height: 90px;
+}
+
+.ribbon h2 {
+  margin-bottom: 2px; /* Add some spacing between heading and paragraph */
+}
+
+@keyframes paletteAnimation {
+  0% {
+    background-color: #3498db;
+  }
+  25% {
+    background-color: #e74c3c;
+  }
+  50% {
+    background-color: #2ecc71;
+  }
+  75% {
+    background-color: #f39c12;
+  }
+  100% {
+    background-color: #9b59b6;
+  }
+}
+
+.sub-ribbon {
+  background-color: #3498db;
+  height: 20px;
+  width: 100%;
+  animation: paletteAnimation 5s infinite alternate; /* Adjust the duration as needed */
+}
+
+footer {
+  background-color: #000435;
+  color: #ffffff;
+  padding: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-button {
+    display: inline-block;
   }
 }

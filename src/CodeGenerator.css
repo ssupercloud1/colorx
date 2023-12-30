@@ -1,0 +1,66 @@
+/* CodeGenerator.css */
+
+.colorx-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  overflow-x: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+}
+
+.colorx-container .color-animations-container {
+  flex: 1;
+  max-width: 300px;
+  margin-right: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none; /* Removed border */
+}
+
+.colorx-container .color-animations-container .color-wheel-animation {
+  width: 100px;
+  height: 100px;
+  background: conic-gradient(
+    from 0deg,
+    #f00 0%,
+    #ff0 25%,
+    #0f0 50%,
+    #00f 75%,
+    #f00 100%,
+    #ff0 125%,
+    #0f0 150%
+  );
+  border-radius: 50%;
+  animation: rotateColorWheel 2s linear infinite;
+}
+
+.colorx-container .color-generator {
+  flex: 1;
+  max-width: 800px;
+}
+
+@keyframes rotateColorWheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.color-display {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  border: 1px solid #000;
+}
