@@ -82,7 +82,7 @@ const CodeGenerator = () => {
           <label>
             <input
               type="text"
-              placeholder={`Enter color code or name (${colorFormat})`}
+              placeholder={`Enter name or code (${colorFormat})`}
               value={inputValue}
               onChange={handleInputChange}
               onBlur={handleColorNameChange}

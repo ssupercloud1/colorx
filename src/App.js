@@ -92,10 +92,7 @@ const Colorx = () => {
       </nav>
 
       <div className="ribbon">
-        <h2 style={{ paddingTop: '2px' }}>Colorx</h2>
-        <p>
-          Become creative with colors
-        </p>
+	    <h2 style={{ paddingTop: '2px' }}>Colorx: Become Creative With Colors</h2>
       </div>
 
       <div className="sub-ribbon">

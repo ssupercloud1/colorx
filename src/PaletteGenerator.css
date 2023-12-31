@@ -42,7 +42,7 @@
 /* Adjustments for smaller screens */
 @media (max-width: 600px) {
   .palette-color {
-    margin-right: 1px; /* Reduce margin between colors on smaller screens */
+    margin-right: 0px; /* Reduce margin between colors on smaller screens */
   }
 
   .color-display {

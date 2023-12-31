@@ -89,7 +89,7 @@ const PaletteGenerator = () => {
           />
         </label>
         <label>
-          Manual Colors (comma-separated):
+          Or Manual:
           <input
             type="text"
             placeholder="Enter color names"
