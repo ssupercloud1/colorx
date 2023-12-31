@@ -41,10 +41,10 @@ const ColorLibrary = () => {
 
   return (
     <div className="color-library-container" style={{ justifyContent: 'center', maxWidth: '90%', margin: 'auto', padding: '20px', overflowX: 'auto', borderRadius: '5px', border: '1px solid #ccc' }}>
-      <h2>Color Library</h2>
+      <h2 style={{ textAlign: 'center' }}>Color Library</h2>
       <div>
         <label>
-          Sort Order:
+          Sort By:
           <select onChange={(e) => handleSortOrderChange(e.target.value)}>
             <option value="ascending">Ascending</option>
             <option value="descending">Descending</option>
@@ -64,7 +64,7 @@ const ColorLibrary = () => {
       {visibleColors < sortedColors.length ? (
         <button onClick={handleMoreButtonClick} style={{ marginTop: '10px' }}>Load More Colors</button>
       ) : (
-        <p>No More Colors</p>
+        <p style={{ textAlign: 'right' }}>No More Colors</p>
       )}
     </div>
   );

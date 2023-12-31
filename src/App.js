@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState } from 'react';
 import './App.css';
 import ColorInfo from './ColorInfo';
@@ -9,6 +11,7 @@ import Terms from './Terms';
 import Cookies from './Cookies';
 import Contact from './Contact';
 import Privacy from './Privacy';
+import ColorMix from './ColorMix'; // Adjust the path based on your project structure
 
 const Colorx = () => {
   const [activeMenu, setActiveMenu] = useState('Code Generator');
@@ -17,10 +20,15 @@ const Colorx = () => {
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
     setMenuOpen(false);
+    scrollToTop();
   };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
   };
 
   let content;
@@ -37,6 +45,9 @@ const Colorx = () => {
       break;
     case 'Library':
       content = <ColorLibrary />;
+      break;
+    case 'Color Mix':
+      content = <ColorMix />;
       break;
     case 'About':
       content = <About />;
@@ -59,13 +70,10 @@ const Colorx = () => {
 
   return (
     <div className={`app-container ${menuOpen ? 'menu-open' : ''}`}>
-      {/* Top Navbar */}
       <nav className="navbar">
-        {/* Mobile Menu Button */}
         <button className="menu-button" onClick={toggleMenu}>
           ☰
         </button>
-        {/* Navigation Links */}
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <button onClick={() => handleMenuClick('Code Generator')}>
             Code Generator
@@ -79,18 +87,17 @@ const Colorx = () => {
           <button onClick={() => handleMenuClick('Library')}>
             Library
           </button>
+          <button onClick={() => handleMenuClick('Color Mix')}>Color Mix</button>
         </div>
       </nav>
 
-      {/* Main Ribbon */}
       <div className="ribbon">
-        <h2 style={{ paddingTop: '2px' }}>Colorx: Become Creative With Colors</h2>
+        <h2 style={{ paddingTop: '2px' }}>Colorx</h2>
         <p>
-          Colorx is the ultimate color platform that provides a one-stop solution for all your color needs.
+          Become creative with colors
         </p>
       </div>
 
-      {/* Sub-Ribbon with Color Box Animation */}
       <div className="sub-ribbon">
         <div className="color-box-container">
           <div className="color-box"></div>
@@ -101,12 +108,10 @@ const Colorx = () => {
         </div>
       </div>
 
-      {/* Render the selected component */}
       {content}
 
-      {/* Footer */}
-      <footer>
-        <div className="footer-links" style={{ paddingTop: '10px' }}>
+      <footer style={{ paddingTop: '30px' }}>
+        <div className="footer-links" style={{ paddingTop: '20px' }}>
           <button onClick={() => handleMenuClick('Code Generator')}>Home</button>
           <button onClick={() => handleMenuClick('About')}>About</button>
           <button onClick={() => handleMenuClick('Contact Us')}>Contact Us</button>

@@ -11,13 +11,12 @@
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 90%;
   margin: auto;
 }
 
 .colorx-container .color-animations-container {
   flex: 1;
-  max-width: 300px;
+  max-width: 600px;
   margin-right: 20px;
   border-radius: 5px;
   overflow: hidden;
@@ -46,7 +45,7 @@
 
 .colorx-container .color-generator {
   flex: 1;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 @keyframes rotateColorWheel {

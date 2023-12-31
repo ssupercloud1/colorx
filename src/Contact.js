@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact-container" style={{ textAlign: "center", padding: "20px", maxWidth: '90%', margin: 'auto', border: '2px solid #ccc', borderRadius: '7px' }}>
       <h2>Contact Us</h2>
       <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you!</p>
       <p>Email: contact@colorx.com</p>
