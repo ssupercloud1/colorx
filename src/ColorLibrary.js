@@ -51,7 +51,7 @@ const ColorLibrary = () => {
   const displayColors = searchTerm ? filteredColors.slice(0, visibleColors) : sortedColors.slice(0, visibleColors);
 
   return (
-    <div className="color-library-container" style={{ justifyContent: 'center', maxWidth: '90%', margin: 'auto', padding: '20px', overflowX: 'auto', borderRadius: '5px', border: '1px solid #ccc' }}>
+    <div className="color-library-container">
       <h2 style={{ textAlign: 'center' }}>Color Library</h2>
       <div>
         <label>
