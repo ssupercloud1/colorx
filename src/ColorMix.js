@@ -7,10 +7,10 @@ class ColorMix extends React.Component {
     super(props);
     this.state = {
       colors: [
-        { hex: "#ffff00", ratio: 50 },
-        { hex: "#ff0000", ratio: 50 },
+        { hex: "#ff00ff", ratio: 50 },
+        { hex: "#00ff00", ratio: 50 },
       ],
-      currentColor: "#ffff00",
+      currentColor: "#ff00ff",
       finalColor: null,
     };
   }
@@ -108,7 +108,7 @@ class ColorMix extends React.Component {
 
     return (
       <div style={{ textAlign: 'justified', padding: '20px', maxWidth: '90%', margin: 'auto', border: '3px solid #ccc', borderRadius: '7px' }}>
-        <h1 style={{ textAlign: 'center' }}>Color Mixer</h1>
+        <h2 style={{ textAlign: 'center' }}>Color Mixer</h2>
         <p>
           This is an online color mixing tool that allows you to experiment with different color combinations, mixtures, and shades until you find the perfect palette for your artwork or design project.
 		</p>

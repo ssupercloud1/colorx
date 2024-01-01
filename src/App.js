@@ -87,7 +87,7 @@ const Colorx = () => {
           <button onClick={() => handleMenuClick('Library')}>
             Library
           </button>
-          <button onClick={() => handleMenuClick('Color Mix')}>Color Mix</button>
+          <button onClick={() => handleMenuClick('Color Mix')}>Color Mixer</button>
         </div>
       </nav>
 

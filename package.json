@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "color-name-list": "^10.18.0",
+    "fuzzball": "^2.1.2",
     "react": "^18.2.0",
     "react-color-palette": "^7.1.0",
     "react-dom": "^18.2.0",

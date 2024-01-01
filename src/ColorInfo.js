@@ -1,6 +1,5 @@
-// ColorInfo.js
-
 import React, { useState } from 'react';
+import * as fuzzball from 'fuzzball';
 import ColorNames from './ColorNames';
 import './ColorInfo.css'; // Ensure this import points to your CSS file
 
@@ -33,11 +32,15 @@ const ColorInfo = () => {
     } else {
       // Handle color name input
       const colorName = value.toLowerCase();
-      const colorCode = ColorNames[colorName];
-      if (colorCode) {
+      const matchedColor = Object.keys(ColorNames).find(
+        (key) => key.toLowerCase() === colorName || fuzzball.ratio(key.toLowerCase(), colorName) > 90
+      );
+
+      if (matchedColor) {
+        const colorCode = ColorNames[matchedColor];
         setDisplayColor(colorCode);
         setDisplayColorCode(colorCode);
-        setDisplayColorName(colorName);
+        setDisplayColorName(matchedColor);
       } else {
         setDisplayColor(''); // Clear display for invalid color name
         setDisplayColorCode('Not Found');
