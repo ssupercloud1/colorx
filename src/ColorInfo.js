@@ -1,7 +1,11 @@
+// ColorInfo.js
+
 import React, { useState } from 'react';
 import * as fuzzball from 'fuzzball';
 import ColorNames from './ColorNames';
-import './ColorInfo.css'; // Ensure this import points to your CSS file
+import ContrastChecker from './ContrastChecker';
+import './ColorInfo.css';
+import ColorGradient from './ColorGradient';
 
 const ColorInfo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -25,7 +29,7 @@ const ColorInfo = () => {
         setDisplayColorCode(colorCode);
         setDisplayColorName(colorName);
       } else {
-        setDisplayColor(''); // Clear display for invalid color code
+        setDisplayColor('');
         setDisplayColorCode('Not Found');
         setDisplayColorName('Not Found');
       }
@@ -42,7 +46,7 @@ const ColorInfo = () => {
         setDisplayColorCode(colorCode);
         setDisplayColorName(matchedColor);
       } else {
-        setDisplayColor(''); // Clear display for invalid color name
+        setDisplayColor('');
         setDisplayColorCode('Not Found');
         setDisplayColorName('Not Found');
       }
@@ -50,10 +54,10 @@ const ColorInfo = () => {
   };
 
   return (
-    <div className="color-info-page-container">
-      {/* Color Info Container */}
-      <div className="color-info-container">
-        <h2 style={{ textAlign: 'center' }}>Color Information</h2>
+    <div className="color-info-page-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto' }}>
+      <div className="color-info-container" style={{ width: '83.8%', maxWidth: '100%', margin: 'auto', alignItems: 'center', border: '1px solid #ccc', borderRadius: '15px', marginBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center' }}>Color Info: Color Finder, Contrast Checker & Gradient</h2>
+		<h3 style={{ textAlign: 'center' }}>Color Finder</h3>
         <p style={{ textAlign: 'center', marginBottom: '10px' }}>
           Explore the details of a color by entering its name or HEX code below.
         </p>
@@ -62,17 +66,28 @@ const ColorInfo = () => {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Enter name or HEX code"
-          style={{ width: '100%', padding: '8px' }}
+          style={{ width: '50%', padding: '10px' }}
         />
         {displayColor && (
           <div className="color-display" style={{ backgroundColor: displayColor }}></div>
         )}
-        {displayColorCode !== '' && displayColorName !== '' && (
+        {displayColorCode !== 'Not Found' && displayColorName !== 'Not Found' && (
           <p>
             {displayColorName && `Name: ${displayColorName} `}
             {displayColorCode && `Code: ${displayColorCode}`}
           </p>
         )}
+      </div>
+
+      {/* Include the ContrastChecker component */}
+      <div className="contrast-checker-container" style={{ width: '90%', maxWidth: '100%', margin: 'auto', marginBottom: '20px' }}>
+        <ContrastChecker />
+      </div>
+      {/* Put horizontal space between Color Contrast Checker and Color Gradient */}
+      <div style={{ marginBottom: '20px' }}></div>
+
+      <div className="color-gradient-container" style={{ width: '90%', maxWidth: '100%', margin: 'auto' }}>
+        <ColorGradient />
       </div>
     </div>
   );

@@ -1,0 +1,65 @@
+/* ColorPalette.css */
+.color-palette-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.color-palette-section {
+  margin-top: 20px;
+  border: 3px solid #ffa500;
+  border-radius: 7px;
+  padding: 40px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.color-palette {
+  display: flex;
+  flex-wrap: nowrap; /* Keep colors in a single line */
+  justify-content: flex-start; /* Align colors from the start */
+  overflow: auto; /* Enable horizontal scrolling */
+  margin-bottom: -20px; /* Compensate for the negative margin in color-palette-color */
+}
+
+.color-palette-color {
+  width: 50px;
+  height: 80px;
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Provide a margin at the bottom */
+  position: relative;
+}
+
+.color-label {
+  font-size: 10px;
+  color: #000; /* Adjust the text color based on your background */
+  position: absolute;
+  bottom: -20px; /* Place labels outside the color */
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .color-palette-container,
+  .color-palette-section,
+  .color-palette {
+    overflow-x: scroll; /* Enable horizontal scrolling on smaller screens */
+  }
+
+  .color-palette-color {
+    width: 40px;
+    height: 60px;
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .color-label {
+    bottom: -15px; /* Adjust label position for smaller screens */
+  }
+}
+
+h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -132,8 +132,8 @@ const CodeGenerator = () => {
               HSL
             </label>
           </div>
-          <button onClick={handleRandomColor}>Random Color</button>
-          <button onClick={handleCopyColor}>Copy Color</button>
+          <button onClick={handleRandomColor} style={{ background: 'blue', color: 'white', padding: '5px'}}>Random Color</button>
+          <button onClick={handleCopyColor} style={{ background: 'green', color: 'white', padding: '5px'}}>Copy Color</button>
         </div>
       </div>
     </div>

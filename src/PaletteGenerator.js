@@ -1,8 +1,12 @@
+// PaletteGenerator.js
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ColorNames from './ColorNames';
 import './PaletteGenerator.css';
 import chroma from 'chroma-js';
 import domtoimage from 'dom-to-image';
+import GradientPalette from './GradientPalette';  // Import GradientPalette
+import ColorPalette from './ColorPalette';
 
 const PaletteGenerator = () => {
   const [paletteColors, setPaletteColors] = useState([]);
@@ -15,8 +19,9 @@ const PaletteGenerator = () => {
       const enteredColors = manualColors.split(',').map((color) => color.trim());
       setPaletteColors(
         enteredColors.map((color) => {
-          const colorCode = ColorNames[color.toLowerCase()];
-          return colorCode ? [color, chroma(colorCode).hex()] : null;
+          const colorName = Object.keys(ColorNames).find((name) => name.toLowerCase() === color.toLowerCase());
+          const colorCode = colorName ? ColorNames[colorName] : null;
+          return colorCode ? [colorName, chroma(colorCode).hex()] : null;
         }).filter(Boolean)
       );
     } else {
@@ -77,7 +82,7 @@ const PaletteGenerator = () => {
       <p>
         With Colorx, you can generate a color palette by simply entering the number of colors you want and hitting the ‘Generate Palette’ button. Most importantly, you can easily download your palette as a PNG file.
       </p>
-      <div className="palette-options">
+      <div className="palette-options" style={{ padding: '5px', marginTop: '5px', marginBottom: '5px' }} >
         <label>
           Number of Colors:
           <input
@@ -97,17 +102,24 @@ const PaletteGenerator = () => {
             onChange={handleManualColorsChange}
           />
         </label>
-        <button onClick={handleGeneratePalette}>Generate</button>
-        <button onClick={handleExportPNG}>Export</button>
+        <button onClick={handleGeneratePalette} style={{ padding: '5px', marginTop: '5px', marginBottom: '5px', background: 'green', color: 'white' }}>Generate</button>
+        <button onClick={handleExportPNG} style={{ padding: '5px', marginTop: '5px', marginBottom: '5px', background: 'blue', color: 'white' }}>Export</button>
       </div>
       <div className="palette" ref={paletteRef}>
-        {paletteColors.map(([, colorCode]) => (
+        {paletteColors.map(([_, colorCode]) => (
           <div key={colorCode} className="palette-color">
-            <div className="color-display" style={{ backgroundColor: colorCode, height: '200px', width: '60px', border:'none', marginBottom: '0px' }}></div>
+            <div className="color-display" style={{ backgroundColor: colorCode, height: '200px', width: '60px', border: 'none', marginBottom: '0px' }}></div>
             <div>{colorCode}</div>
           </div>
         ))}
       </div>
+      <ColorPalette />
+
+      {/* Display the gradient palette */}
+      <div className="gradient-palette-container">
+        <GradientPalette />
+      </div>
+
     </div>
   );
 };

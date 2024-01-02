@@ -4,12 +4,13 @@
   display: flex;
   flex-direction: column; /* Stack the containers vertically */
   align-items: center; /* Center-align the containers */
+  max-width: 100%;
+  margin: auto;
 }
 
 .color-info-container {
-  height: 400px; /* Increase the height as needed */
-  max-width: 600px;
-  margin: 10px;
+  height: 350px; /* Increase the height as needed */
+  margin: auto;
   padding: 20px;
   overflow-x: auto;
   border-radius: 5px;

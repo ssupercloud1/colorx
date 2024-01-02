@@ -13,40 +13,42 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  margin-bottom: 20px; /* Add some margin between options and the palette */
+  border: 3px solid #ffa500;
+  border-radius: 5px;
 }
 
 .palette {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .palette-color {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5px; /* Add some spacing between colors */
+  margin-right: 0px; /* Add some space between colors */
 }
+
 .palette-color div {
   font-size: 14px; /* Decrease the size of color codes */
 }
 
 .color-display {
-  width: 20px; /* Decrease width of each color */
-  height: 80px; /* Increase height of each color */
-  
+  width: 40px; /* Adjust width of each color */
+  height: 40px; /* Adjust height of each color */
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 600px) {
   .palette-color {
-    margin-right: 0px; /* Reduce margin between colors on smaller screens */
+    margin-right: 0; /* Remove margin between colors on smaller screens */
   }
 
   .color-display {
     width: 30px; /* Adjust the width of each color on smaller screens */
-    height: 30px;
+    height: 30px; /* Adjust the height of each color on smaller screens */
   }
 }
