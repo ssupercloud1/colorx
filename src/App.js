@@ -1,5 +1,7 @@
+// App.js
+
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from 'react-router-dom';
 import './App.css';
 import ColorInfo from './ColorInfo';
 import ColorLibrary from './ColorLibrary';
@@ -13,6 +15,7 @@ import Privacy from './Privacy';
 import ColorMix from './ColorMix';
 import ContrastChecker from './ContrastChecker';
 import ColorGradient from './ColorGradient';
+import LandingPage from './LandingPage'; // Import the LandingPage component
 
 const Colorx = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +38,9 @@ const Colorx = () => {
           <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
             <Link to="/" onClick={closeMenu}>
               Home
+            </Link>
+            <Link to="/palette-generator" onClick={closeMenu}>
+              Palette Generator
             </Link>
             <Link to="/code-generator" onClick={closeMenu}>
               Code Generator
@@ -72,7 +78,8 @@ const Colorx = () => {
         </div>
 
         <Routes>
-          <Route path="/" element={<PaletteGenerator />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/palette-generator" element={<PaletteGenerator />} />
           <Route path="/code-generator" element={<CodeGenerator />} />
           <Route path="/contrast-checker" element={<ContrastChecker />} />
           <Route path="/color-gradient" element={<ColorGradient />} />
