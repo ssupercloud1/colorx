@@ -43,8 +43,8 @@ const GradientPalette = () => {
   };
 
   return (
-    <div style={{ height: '300px', padding: '20px', marginBottom: '10px' }}>
-      <h2 style={{ textAlign: 'center' }}>Gradient Palette</h2>
+    <div style={{ height: '300px', padding: '20px', marginBottom: '10px', border: '1px solid gray', borderRadius: '10px' }}>
+      <h2 style={{ textAlign: 'center' }}>Gradient Palettes</h2>
       <div style={{ marginBottom: '10px' }}>
         <label style={{ marginRight: '10px' }}>
           Start Color:

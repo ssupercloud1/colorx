@@ -2,9 +2,7 @@
 
 .palette-generator-container {
   padding: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  max-width: 90%;
+  max-width: 80%;
   margin: auto;
   overflow: auto;
 }
@@ -12,17 +10,21 @@
 .palette-options {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  margin-right: 20px;
   margin-bottom: 20px; /* Add some margin between options and the palette */
-  border: 3px solid #ffa500;
-  border-radius: 5px;
+  margin: auto;
+  border: 1px solid #ffa500;
+  border-radius: 7px;
 }
 
 .palette {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin-bottom: 11px;
+  margin-bottom: 20px;
+  border: 1px solid #ffa500;
+  border-radius: 10px;
 }
 
 .palette-color {
@@ -33,7 +35,7 @@
 }
 
 .palette-color div {
-  font-size: 14px; /* Decrease the size of color codes */
+  font-size: 12px; /* Decrease the size of color codes */
 }
 
 .color-display {

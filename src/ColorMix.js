@@ -1,6 +1,7 @@
 import React from 'react';
 import { saveAs } from 'file-saver';
 import './ColorMix.css';  // Import the CSS file
+import { Link } from 'react-router-dom';
 
 class ColorMix extends React.Component {
   constructor(props) {
@@ -107,10 +108,10 @@ class ColorMix extends React.Component {
     const { colors, currentColor, finalColor } = this.state;
 
     return (
-      <div style={{ textAlign: 'justified', padding: '20px', maxWidth: '90%', margin: 'auto', border: '3px solid #ccc', borderRadius: '7px' }}>
+      <div style={{ textAlign: 'justified', padding: '10px', maxWidth: '80%', margin: 'auto', border: '3px solid #ccc', borderRadius: '7px' }}>
         <h2 style={{ textAlign: 'center' }}>Color Mixer</h2>
         <p>
-          This is an online color mixing tool that allows you to experiment with different color combinations, mixtures, and shades until you find the perfect palette for your artwork or design project.
+          This is an online color mixing tool that allows you to experiment with different color combinations, mixtures, and <Link to="/">shades</Link> until you find the perfect palette for your artwork or design project.
 		</p>
 		<p>
 		  The color mixer is versatile and can be used for a variety of applications, including soap making, cooking, wall painting, modeling, learning color theory, and more.

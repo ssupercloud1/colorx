@@ -48,13 +48,9 @@ body {
 .ribbon {
   background-color: #000435;
   color: #ffffff;
-  text-align: center;
+  text-align: left;
   padding: 5px;
-  height: 90px;
-}
-
-.ribbon h2 {
-  margin-bottom: 1px; /* Add some spacing between heading and paragraph */
+  height: 70px;
 }
 
 @keyframes paletteAnimation {

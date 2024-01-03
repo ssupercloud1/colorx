@@ -4,13 +4,13 @@
   margin: 0 auto;
   padding: 20px;
   overflow-x: auto; /* Enable horizontal scrolling */
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 .color-palette-section {
-  margin-top: 20px;
-  border: 3px solid #ffa500;
-  border-radius: 7px;
-  padding: 40px;
+  margin-top: 5px;
+  padding: 20px;
   overflow-x: auto; /* Enable horizontal scrolling */
 }
 
@@ -24,12 +24,12 @@
 
 .color-palette-color {
   width: 50px;
-  height: 80px;
+  height: 70px;
   margin-right: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Provide a margin at the bottom */
+  margin-bottom: 60px; /* Provide a margin at the bottom */
   position: relative;
 }
 

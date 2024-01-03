@@ -7,6 +7,7 @@ import chroma from 'chroma-js';
 import domtoimage from 'dom-to-image';
 import GradientPalette from './GradientPalette';  // Import GradientPalette
 import ColorPalette from './ColorPalette';
+import { Link } from 'react-router-dom';
 
 const PaletteGenerator = () => {
   const [paletteColors, setPaletteColors] = useState([]);
@@ -77,50 +78,71 @@ const PaletteGenerator = () => {
   };
 
   return (
-    <div className="palette-generator-container">
-      <h2 style={{ textAlign: 'center' }}>Palette Generator</h2>
-      <p>
-        With Colorx, you can generate a color palette by simply entering the number of colors you want and hitting the ‘Generate Palette’ button. Most importantly, you can easily download your palette as a PNG file.
-      </p>
-      <div className="palette-options" style={{ padding: '5px', marginTop: '5px', marginBottom: '5px' }} >
-        <label>
-          Number of Colors:
-          <input
-            type="number"
-            min="1"
-            max={Object.keys(ColorNames).length}
-            value={numColors}
-            onChange={handleNumColorsChange}
-          />
-        </label>
-        <label>
-          Or Manual:
-          <input
-            type="text"
-            placeholder="Enter color names"
-            value={manualColors}
-            onChange={handleManualColorsChange}
-          />
-        </label>
-        <button onClick={handleGeneratePalette} style={{ padding: '5px', marginTop: '5px', marginBottom: '5px', background: 'green', color: 'white' }}>Generate</button>
-        <button onClick={handleExportPNG} style={{ padding: '5px', marginTop: '5px', marginBottom: '5px', background: 'blue', color: 'white' }}>Export</button>
-      </div>
-      <div className="palette" ref={paletteRef}>
-        {paletteColors.map(([_, colorCode]) => (
-          <div key={colorCode} className="palette-color">
-            <div className="color-display" style={{ backgroundColor: colorCode, height: '200px', width: '60px', border: 'none', marginBottom: '0px' }}></div>
-            <div>{colorCode}</div>
-          </div>
-        ))}
-      </div>
-      <ColorPalette />
-
-      {/* Display the gradient palette */}
-      <div className="gradient-palette-container">
-        <GradientPalette />
+    <>
+      <div style={{ maxWidth: '80%', margin: 'auto', marginTop: '10px', padding: '10px', alignItems: 'center', border: '1px solid #ccc', borderRadius: '15px' }}>
+        <h1 style={{ textAlign: 'center' }}>Colorx: Your One-Stop Shop for All Things Colorful</h1>
+        <p>
+          Colorx is a comprehensive web app that offers a wide range of tools to help you create and experiment with colors. With Colorx, you can generate palettes, <Link to="/code-generator">color codes</Link>, and even check contrast of colors. The app also includes a color finder, <Link to="/color-gradient">color gradient</Link>, and a <Link to="/library">library of colors</Link> to choose from.
+        </p>
+        <p>
+          Whether you’re a designer, artist, or just someone who loves playing with colors, Colorx has everything you need to get started. So why wait? Start exploring the world of colors like never before!
+        </p>
+		<p>
+		  Visit <Link to="/contrast-checker">this page</Link> to start using the contrast checker or continue with generating color palettes.
+		</p>
       </div>
 
-    </div>
+      <div className="palette-generator-container">
+        <div>
+          <h2 style={{ textAlign: 'center' }}>Palette Generator</h2>
+          <p>
+            Here, you're able to easily generate random color palettes (with a variety of colors), shades, tints, tones and gradient palettes.
+          </p>
+        </div>
+
+        <div className="palette-options" style={{ padding: '5px', marginTop: '5px', marginBottom: '5px' }}>
+          <label>
+            Number of Colors:
+            <input
+              type="number"
+              min="1"
+              max={Object.keys(ColorNames).length}
+              value={numColors}
+              onChange={handleNumColorsChange}
+            />
+          </label>
+          <label>
+            Manual:
+            <input
+              type="text"
+              placeholder="Enter color names"
+              value={manualColors}
+              onChange={handleManualColorsChange}
+            />
+          </label>
+          <button onClick={handleGeneratePalette} style={{ padding: '5px', marginTop: '5px', marginLeft: '10px', marginRight: '5px', marginBottom: '5px', background: 'green', color: 'white' }}>Generate</button>
+          <button onClick={handleExportPNG} style={{ padding: '5px', marginTop: '5px', marginBottom: '5px', background: 'blue', color: 'white' }}>Export</button>
+        </div>
+
+        <div className="palette" ref={paletteRef} style={{ justifyContent: 'center', marginBottom: '20px' }}>
+          {paletteColors.map(([_, colorCode]) => (
+            <div key={colorCode} className="palette-color">
+              <div className="color-display" style={{ backgroundColor: colorCode, height: '200px', width: '50px', border: 'none', marginBottom: '0px' }}></div>
+              <div>{colorCode}</div>
+            </div>
+          ))}
+        </div>
+
+        <ColorPalette />
+
+        {/* Display the gradient palette */}
+        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+        </div>
+        <div className="gradient-palette-container">
+          <GradientPalette />
+        </div>
+      </div>
+    </>
   );
 };
 

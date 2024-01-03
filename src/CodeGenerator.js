@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CodeGenerator.css'; // Update the path to your CSS file
 import colorNameList from 'color-name-list';
+import { Link } from 'react-router-dom';
 
 const CodeGenerator = () => {
   const [color, setColor] = useState('#007CE5');
@@ -78,6 +79,7 @@ const CodeGenerator = () => {
       {/* Code Generator Container */}
       <div className="color-generator">
         <h2>Code Generator</h2>
+		<p>Enter color name to generate its code. You can also use random generator to come up exciting colors and their color codes. Still, you can navigate to <Link to="/library">color library</Link> to surf through A-Z list of colors.</p>
         <div>
           <label>
             <input

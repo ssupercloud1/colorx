@@ -18,6 +18,7 @@ const Contact = () => {
       <h2>Contact Us</h2>
       <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you!</p>
       <p>Email: contact@colorx.com</p>
+	  <p style={{ color: 'red' }}>Note that this is just an experimental contact form. Do not use it!</p>
 
       <div className="contact-form">
         <label htmlFor="name">Name:</label>
