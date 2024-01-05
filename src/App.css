@@ -62,6 +62,13 @@ h1, h2, h3, h4, h5, h6 {
   height: 70px;
 }
 
+.footer-links {
+  justify-content: center;
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
 @keyframes paletteAnimation {
   0% {
     background-color: #3498db;
@@ -112,6 +119,11 @@ footer {
 
   .menu-button {
     display: inline-block;
+  }
+  
+  .footer-links {
+    flex-direction: column; /* Stack links vertically on small screens */
+    align-items: center; /* Center align links on small screens */
   }
 }
 
