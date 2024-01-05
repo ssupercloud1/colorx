@@ -152,7 +152,7 @@ const Colorx = () => {
         </nav>
 
         <div className="ribbon">
-          <h1 style={{ padding: '5px', textAlign: 'left', marginLeft: '10px' }}>Colorx</h1>
+          <h1 style={{ padding: '5px', textAlign: 'center', }}>Colorx</h1>
         </div>
 
         <div className="sub-ribbon">
