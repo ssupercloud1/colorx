@@ -120,11 +120,6 @@ footer {
   .menu-button {
     display: inline-block;
   }
-  
-  .footer-links {
-    flex-direction: column; /* Stack links vertically on small screens */
-    align-items: center; /* Center align links on small screens */
-  }
 }
 
 /* Additional styles for Home component */

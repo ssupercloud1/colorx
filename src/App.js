@@ -1,14 +1,11 @@
-// App.js
-
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, { useState, useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import ColorInfo from './ColorInfo';
 import ColorLibrary from './ColorLibrary';
 import PaletteGenerator from './PaletteGenerator';
 import About from './About';
 import Terms from './Terms';
-import Cookies from './Cookies';
 import Contact from './Contact';
 import Privacy from './Privacy';
 import ColorMix from './ColorMix';
@@ -22,14 +19,12 @@ import MixersImage from './Mixers24.png';
 import LibraryImage from './Library24.png';
 
 const boxStyle = {
-  // Add your box styles here
-  padding: '20px',
+  padding: '10px',
   margin: 'auto',
   textAlign: 'left',
 };
 
 const imageStyle = {
-  // Add your image styles here
   height: 'auto',
   marginTop: '10px',
 };
@@ -84,6 +79,16 @@ const Home = () => (
   </div>
 );
 
+const ScrollToTop = ({ children }) => {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location]);
+
+  return children;
+};
+
 const Colorx = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -95,7 +100,6 @@ const Colorx = () => {
     setMenuOpen(false);
   };
 
-  // Define your routes outside the Colorx component
   const routesConfig = [
     { path: '/', element: <Home /> },
     { path: '/color-info', element: <ColorInfo /> },
@@ -106,15 +110,16 @@ const Colorx = () => {
     { path: '/library', element: <ColorLibrary /> },
     { path: '/about', element: <About /> },
     { path: '/terms', element: <Terms /> },
-    { path: '/cookies', element: <Cookies /> },
     { path: '/contact', element: <Contact /> },
     { path: '/privacy-policy', element: <Privacy /> },
   ];
 
   return (
     <Router>
-      <div className={`app-container ${menuOpen ? 'menu-open' : ''}`}>
-        <nav className="navbar">
+      <ScrollToTop>
+        <div className={`app-container ${menuOpen ? 'menu-open' : ''}`}>
+          {/* ... (rest of the code) */}
+		   <nav className="navbar">
           <button className="menu-button" onClick={toggleMenu}>
             ☰
           </button>
@@ -182,13 +187,11 @@ const Colorx = () => {
             <Link to="/privacy-policy" onClick={closeMenu} style={{ color: 'white' }}>
               Privacy Policy
             </Link>
-            <Link to="/cookies" onClick={closeMenu} style={{ color: 'white' }}>
-              Cookies
-            </Link>
           </div>
           <p>&copy; 2023 Colorx. All rights reserved.</p>
         </footer>
-      </div>
+        </div>
+      </ScrollToTop>
     </Router>
   );
 };
