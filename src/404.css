@@ -1,0 +1,146 @@
+/* 404.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.not-found-error-box {
+  text-align: center;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.not-found-h1 {
+  font-size: 80px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.not-found-h2 {
+  font-size: 30px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.not-found-p {
+  line-height: 1.5;
+  color: #666;
+}
+
+.not-found-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.not-found-animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.not-found-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.not-found-stars span {
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: #ddd;
+  animation: twinkle 2s infinite;
+}
+
+.not-found-planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: rotate 8s infinite ease-in-out;
+}
+
+.not-found-comet {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  animation: comet-trail 5s infinite ease-in-out;
+}
+
+.not-found-comet .tail {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100px;
+  height: 10px;
+  background-color: #fff;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes comet-trail {
+  0%, 100% {
+    left: -100px;
+    opacity: 0;
+  }
+  20%, 80% {
+    left: 100vw;
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .not-found-container {
+    width: 80%;
+	margin: auto;
+  }
+}
