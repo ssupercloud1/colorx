@@ -26,19 +26,16 @@ const boxStyle = {
   padding: '20px',
   margin: 'auto',
   textAlign: 'left',
-  width: '40%',
-  maxWidth: '100%',
 };
 
 const imageStyle = {
   // Add your image styles here
-  width: '100%',
   height: 'auto',
   marginTop: '10px',
 };
 
 const Home = () => (
-  <div style={{ maxWidth: '100%', justifyContent: 'center', textAlign: 'center', margin: 'auto' }}>
+  <div style={{ maxWidth: '80%', justifyContent: 'center', textAlign: 'center', margin: 'auto' }}>
     <h1 style={{ textAlign: 'center' }}>Your One-Stop App for All Things Colorful</h1>
         <p>
           Colorx is a comprehensive web app that offers a wide range of tools to help you create and experiment with colors. With Colorx, you can generate palettes, <Link to="/color-info">color codes</Link>, and even check contrast of colors. The app also includes a color finder, <Link to="/color-gradient">color gradient</Link>, and a <Link to="/library">library of colors</Link> to choose from.

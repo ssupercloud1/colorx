@@ -1,3 +1,4 @@
+// GradientPalette.js
 import React, { useState, useEffect } from 'react';
 import chroma from 'chroma-js';
 
@@ -8,6 +9,18 @@ const GradientPalette = () => {
   const [palette, setPalette] = useState([]);
 
   useEffect(() => {
+    const generatePalette = () => {
+      try {
+        const colorScale = chroma
+          .scale([chroma(startColor).hex(), chroma(endColor).hex()])
+          .colors(numSteps);
+        setPalette(colorScale);
+      } catch (error) {
+        console.error('Error creating color scale:', error);
+        setPalette(['#000', '#fff']);
+      }
+    };
+
     if (startColor !== '#FF5733' || endColor !== '#33FF57' || numSteps !== 5) {
       generatePalette();
     } else {
@@ -16,19 +29,8 @@ const GradientPalette = () => {
         .scale([chroma(startColor).hex(), chroma(endColor).hex()])
         .colors(numSteps));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startColor, endColor, numSteps]);
-
-  const generatePalette = () => {
-    try {
-      const colorScale = chroma
-        .scale([chroma(startColor).hex(), chroma(endColor).hex()])
-        .colors(numSteps);
-      setPalette(colorScale);
-    } catch (error) {
-      console.error('Error creating color scale:', error);
-      setPalette(['#000', '#fff']);
-    }
-  };
 
   const handleStartColorChange = (event) => {
     setStartColor(event.target.value);
@@ -61,7 +63,7 @@ const GradientPalette = () => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {palette.map((color, index) => (
-          <div key={index} style={{ backgroundColor: color, width: '80%', height: '100px', marginTop: '20px' }}></div>
+          <div key={index} style={{ backgroundColor: color, width: '80%', height: '80px', marginTop: '20px' }}></div>
         ))}
       </div>
     </div>

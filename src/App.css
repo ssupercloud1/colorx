@@ -15,7 +15,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app-container {
-  width: 80%;
   margin: 0 auto;
   border: 1px solid orange;
   border-radius: 2px;
@@ -125,6 +124,7 @@ footer {
 }
 
 .box {
+  width: 40%;
   padding: 20px;
   margin: 10px;
   text-align: left;
@@ -142,4 +142,9 @@ footer {
   height: auto;
   margin-top: 20px;
   border-radius: 8px;
+}
+@media only screen and (max-width: 768px) {
+  .box {
+    width: 100%;
+  }
 }

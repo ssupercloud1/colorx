@@ -7,7 +7,6 @@ import chroma from 'chroma-js';
 import domtoimage from 'dom-to-image';
 import GradientPalette from './GradientPalette';  // Import GradientPalette
 import ColorPalette from './ColorPalette';
-import { Link } from 'react-router-dom';
 
 const PaletteGenerator = () => {
   const [paletteColors, setPaletteColors] = useState([]);

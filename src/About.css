@@ -79,3 +79,10 @@
   color: #333;
   font-size: 1em;
 }
+
+@media (max-width: 768px) {
+  .about-container {
+	max-width: 100%;
+  }
+}
+

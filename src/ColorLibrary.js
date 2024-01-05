@@ -72,14 +72,14 @@ const ColorLibrary = () => {
       <div className="color-rows">
         {displayColors.map(([colorName, colorCode]) => (
           <div key={colorCode} className="color-item">
-            <div className="color-display" style={{ backgroundColor: colorCode }}></div>
+            <div className="color-display" style={{ backgroundColor: colorCode, width: '100%', height: '70px' }}></div>
             <p>{colorName}</p>
             <p>{colorCode}</p>
           </div>
         ))}
       </div>
       {visibleColors < (searchTerm ? filteredColors.length : sortedColors.length) ? (
-        <button onClick={handleMoreButtonClick} style={{ marginTop: '10px' }}>Load More Colors</button>
+        <button onClick={handleMoreButtonClick} className="load-more-button" style={{ marginTop: '10px', background: 'blue', color: 'white', padding: '10px' }}>Load More</button>
       ) : (
         <p style={{ textAlign: 'right' }}>No More Colors</p>
       )}

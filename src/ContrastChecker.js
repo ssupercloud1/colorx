@@ -1,5 +1,4 @@
 // ContrastChecker.js
-
 import React, { useState, useEffect } from 'react';
 import { ChromePicker } from 'react-color';
 
@@ -10,6 +9,41 @@ const ContrastChecker = () => {
   const [accessibilityLevel, setAccessibilityLevel] = useState('');
 
   useEffect(() => {
+    const calculateContrastRatio = (foreground, background) => {
+      const lum1 = calculateRelativeLuminance(foreground);
+      const lum2 = calculateRelativeLuminance(background);
+
+      const contrast = (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
+      return contrast.toFixed(2);
+    };
+
+    const calculateRelativeLuminance = (color) => {
+      const rgb = color.match(/\w\w/g).map((hex) => parseInt(hex, 16) / 255);
+
+      const gammaCorrected = rgb.map((val) =>
+        val <= 0.04045 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4)
+      );
+
+      const luminance = gammaCorrected[0] * 0.2126 + gammaCorrected[1] * 0.7152 + gammaCorrected[2] * 0.0722;
+      return luminance;
+    };
+
+    const getAccessibilityLevel = (contrastRatio) => {
+      if (contrastRatio >= 7.0) {
+        return 'AAA';
+      } else if (contrastRatio >= 4.5) {
+        return 'AA';
+      } else {
+        return 'Fail';
+      }
+    };
+
+    const handleCheckContrast = () => {
+      const ratio = calculateContrastRatio(textColor, backgroundColor);
+      setContrastRatio(ratio);
+      setAccessibilityLevel(getAccessibilityLevel(ratio));
+    };
+
     handleCheckContrast();
   }, [textColor, backgroundColor]);
 
@@ -17,47 +51,12 @@ const ContrastChecker = () => {
     isText ? setTextColor(color.hex) : setBackgroundColor(color.hex);
   };
 
-  const handleCheckContrast = () => {
-    const ratio = calculateContrastRatio(textColor, backgroundColor);
-    setContrastRatio(ratio);
-    setAccessibilityLevel(getAccessibilityLevel(ratio));
-  };
-
-  const calculateContrastRatio = (foreground, background) => {
-    const lum1 = calculateRelativeLuminance(foreground);
-    const lum2 = calculateRelativeLuminance(background);
-
-    const contrast = (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
-    return contrast.toFixed(2);
-  };
-
-  const calculateRelativeLuminance = (color) => {
-    const rgb = color.match(/\w\w/g).map((hex) => parseInt(hex, 16) / 255);
-
-    const gammaCorrected = rgb.map((val) =>
-      val <= 0.04045 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4)
-    );
-
-    const luminance = gammaCorrected[0] * 0.2126 + gammaCorrected[1] * 0.7152 + gammaCorrected[2] * 0.0722;
-    return luminance;
-  };
-
-  const getAccessibilityLevel = (contrastRatio) => {
-    if (contrastRatio >= 7.0) {
-      return 'AAA';
-    } else if (contrastRatio >= 4.5) {
-      return 'AA';
-    } else {
-      return 'Fail';
-    }
-  };
-
   return (
     <div style={{ margin: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', border: '1px solid #ccc', borderRadius: '15px' }}>
-      <h3 style={{ color: '#333', marginBottom: '10px' }}>Color Contrast Checker</h3>
+      <h2 style={{ color: '#333', marginBottom: '10px' }}>Color Contrast Checker</h2>
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}>
         <div style={{ marginBottom: '10px' }}>
-          <label style={{ color: '#333' }}>Text Color:</label>
+          <label style={{ color: '#333' }}>Text Color</label>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
             <ChromePicker
               color={textColor}
@@ -69,7 +68,7 @@ const ContrastChecker = () => {
           </div>
         </div>
         <div style={{ marginLeft: '20px', marginBottom: '10px' }}>
-          <label style={{ color: '#333' }}>Background Color:</label>
+          <label style={{ color: '#333' }}>Background Color</label>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
             <ChromePicker
               color={backgroundColor}

@@ -1,6 +1,5 @@
 /* ColorPalette.css */
 .color-palette-container {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   overflow-x: auto; /* Enable horizontal scrolling */
@@ -23,8 +22,8 @@
 }
 
 .color-palette-color {
-  width: 50px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   margin-right: 0px;
   display: flex;
   align-items: center;
@@ -41,7 +40,7 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .color-palette-container,
   .color-palette-section,
   .color-palette {
@@ -49,9 +48,9 @@
   }
 
   .color-palette-color {
-    width: 40px;
-    height: 60px;
-    margin-bottom: 10px; /* Adjust margin for smaller screens */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px; /* Adjust margin for smaller screens */
   }
 
   .color-label {

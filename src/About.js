@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div className="about-container" style={{ maxWidth: '100%' }}>
+    <div className="about-container" style={{ maxWidth: '80%' }}>
       <h2>About Colorx</h2>
       <p>
         Welcome to Colorx, where creativity meets color! Colorx is more than just a platform; it's your go-to resource for all things related to colors. Whether you're a designer seeking inspiration, an artist exploring new palettes, or someone who simply loves colors, Colorx has something special for you.

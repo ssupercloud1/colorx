@@ -2,9 +2,12 @@
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  max-width: 90%;
+  max-width: 80%;
   margin: auto;
   overflow: auto;
+  display: flex;
+  flex-direction: column; /* Ensure children stack vertically */
+  align-items: flex-start; /* Align children to the start of the cross axis (left) */
 }
 
 .color-rows {
@@ -26,12 +29,21 @@
 }
 
 .color-display {
-  width: 100%;
-  height: 50px;
   margin-bottom: 5px;
 }
 
+.load-more-button {
+  margin-top: 10px;
+  background: blue;
+  color: white;
+  padding: 10px;
+  margin-left: auto; /* Push the button to the right */
+}
+
 @media (max-width: 768px) {
+  .color-library-container {
+	max-width: 100%;
+  }
   .color-item {
     width: calc(50% - 20px);
   }

@@ -4,7 +4,7 @@ import chroma from 'chroma-js';
 import './ColorPalette.css';
 
 const ColorPalette = () => {
-  const [baseColor, setBaseColor] = useState('blue'); // Set the initial base color to 'blue'
+  const [baseColor, setBaseColor] = useState('blue');
   const [shades, setShades] = useState([]);
   const [tints, setTints] = useState([]);
   const [tones, setTones] = useState([]);
@@ -16,11 +16,9 @@ const ColorPalette = () => {
       const baseColorCode = chroma.valid(baseColor) ? chroma(baseColor).hex() : '';
 
       if (baseColorCode) {
-        const shadeColors = chroma.scale(['black', baseColorCode]).colors(13);
-        const tintColors = chroma.scale([baseColorCode, 'white']).colors(13);
-        const toneColors = chroma
-          .scale(['black', baseColorCode, 'white'])
-          .colors(13);
+        const shadeColors = chroma.scale(['black', baseColorCode]).colors(9);
+        const tintColors = chroma.scale([baseColorCode, 'white']).colors(9);
+        const toneColors = chroma.scale(['black', baseColorCode, 'white']).colors(9);
 
         setShades(shadeColors);
         setTints(tintColors);
@@ -40,6 +38,7 @@ const ColorPalette = () => {
 
   useEffect(() => {
     generatePalette();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [baseColor]);
 
   const handleBaseColorChange = (event) => {
