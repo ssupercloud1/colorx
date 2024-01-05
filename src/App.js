@@ -97,7 +97,7 @@ const Colorx = () => {
 
   // Define your routes outside the Colorx component
   const routesConfig = [
-    { path: '/colorx', element: <Home /> },
+    { path: '/', element: <Home /> },
     { path: '/color-info', element: <ColorInfo /> },
     { path: '/palette-generator', element: <PaletteGenerator /> },
     { path: '/contrast-checker', element: <ContrastChecker /> },
@@ -120,7 +120,7 @@ const Colorx = () => {
           </button>
           <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
             {/* Update the Link for the home page */}
-            <Link to="/colorx" onClick={closeMenu}>
+            <Link to="/" onClick={closeMenu}>
               Home
             </Link>
             <Link to="/color-info" onClick={closeMenu}>
@@ -167,7 +167,7 @@ const Colorx = () => {
 
         <footer style={{ paddingTop: '30px', color: 'white' }}>
           <div className="footer-links" style={{ justifyContent: 'center', paddingTop: '20px', display: 'flex', gap: '10px' }}>
-            <Link to="/colorx" onClick={closeMenu} style={{ color: 'white' }}>
+            <Link to="/" onClick={closeMenu} style={{ color: 'white' }}>
               Home
             </Link>
             <Link to="/about" onClick={closeMenu} style={{ color: 'white' }}>
