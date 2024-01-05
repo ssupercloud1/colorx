@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/colorx/static/css/main.22d3462f.css",
+    "main.js": "/colorx/static/js/main.d744e179.js",
+    "static/js/787.63fc713e.chunk.js": "/colorx/static/js/787.63fc713e.chunk.js",
+    "static/media/Codes24.png": "/colorx/static/media/Codes24.b8b13deabeecd8473302.png",
+    "static/media/Mixers24.png": "/colorx/static/media/Mixers24.0d6e844a15b7a593724c.png",
+    "static/media/Gradients24.png": "/colorx/static/media/Gradients24.f91465d55b1b1c197f32.png",
+    "static/media/Library24.png": "/colorx/static/media/Library24.307315cda7986405534c.png",
+    "static/media/Contrast24.png": "/colorx/static/media/Contrast24.b87c53d615463feba694.png",
+    "index.html": "/colorx/index.html",
+    "main.22d3462f.css.map": "/colorx/static/css/main.22d3462f.css.map",
+    "main.d744e179.js.map": "/colorx/static/js/main.d744e179.js.map",
+    "787.63fc713e.chunk.js.map": "/colorx/static/js/787.63fc713e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22d3462f.css",
+    "static/js/main.d744e179.js"
+  ]
+}
