@@ -1,0 +1,115 @@
+/* Inside ImageColor.css */
+.image-color-container {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; /* Add padding for better mobile display */
+}
+
+.image-color-container .image-color-input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.image-color-container .uploaded-image-container {
+  margin-top: 20px;
+}
+
+.image-color-container .uploaded-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.image-color-container .color-palette {
+  display: flex;
+  flex-wrap: wrap; /* Change to wrap for smaller screens */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image-color-container .color-box {
+  margin: 5px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: black;
+  font-size: 14px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%; /* Set to 100% width for better mobile display */
+  max-height: 200px;
+}
+
+.image-color-container .color-box .color-label {
+  font-size: 10px;
+  color: #000; /* Adjust the text color based on your background */
+  position: absolute;
+  bottom: -20px; /* Place labels outside the color */
+  text-align: center;
+}
+
+.image-color-container .color-picker-container {
+  z-index: 1000;
+}
+
+.image-color-container .selected-color-display {
+  margin-top: 20px;
+}
+
+.image-color-container .extra-space-below-buttons {
+  height: 20px;
+}
+
+.image-color-container .button-container {
+  display: flex;
+  align-items: center; /* Center buttons for smaller screens */
+  margin-right: 20px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.image-color-container button {
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Set to 100% width for better mobile display */
+  margin-bottom: 10px; /* Add margin for better spacing on mobile */
+  margin: 0 5px; /* Add space between buttons */
+}
+
+.image-color-container button:hover {
+  opacity: 0.8;
+}
+
+/* Additional styling to make it more attractive */
+.image-color-container h2 {
+  color: #333;
+}
+
+.image-color-container p {
+  color: #666;
+}
+
+.image-color-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.image-color-container li {
+  margin-bottom: 5px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .image-color-container .color-box {
+    width: 100%; /* Set to 100% width for better mobile display */
+  }
+}

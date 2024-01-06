@@ -11,6 +11,7 @@ import Privacy from './Privacy';
 import ColorMix from './ColorMix';
 import ContrastChecker from './ContrastChecker';
 import ColorGradient from './ColorGradient';
+import ImageColor from './ImageColor';
 import NotFound from './404'; // Import the NotFound component
 import PalettesImage from './Palettes24.png';
 import CodesImage from './Codes24.png';
@@ -114,6 +115,7 @@ const Colorx = () => {
     { path: '/contact', element: <Contact /> },
     { path: '/privacy-policy', element: <Privacy /> },
 	{ path: '/*', element: <NotFound /> },
+	{ path: '/image-color', element: <ImageColor /> },
   ];
 
   return (
@@ -135,6 +137,9 @@ const Colorx = () => {
             </Link>
             <Link to="/palette-generator" onClick={closeMenu}>
               Palette Generator
+            </Link>
+			<Link to="/image-color" onClick={closeMenu}>
+              Color Extractor
             </Link>
             <Link to="/contrast-checker" onClick={closeMenu}>
               Contrast Checker
