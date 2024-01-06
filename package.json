@@ -18,7 +18,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-	"add-domain": "echo \"colorx.cloud\" > build/CNAME",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
