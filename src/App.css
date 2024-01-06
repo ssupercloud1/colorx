@@ -122,12 +122,7 @@ footer {
     display: inline-block;
   }
   .footer-links {
-    flex-direction: row; /* Reset to default row direction on smaller screens */
     min-height: auto; /* Reset minimum height on smaller screens */
-  }
-
-  .footer-links a {
-    white-space: nowrap; /* Prevent wrapping for all links on smaller screens */
   }
 }
 

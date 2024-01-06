@@ -18,20 +18,20 @@ body {
 .not-found-error-box {
   text-align: center;
   padding: 40px;
-  background-color: #fff;
+  background-color: #f3f3f3;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .not-found-h1 {
-  font-size: 80px;
+  font-size: 50px;
   color: #333;
   margin-bottom: 10px;
 }
 
 .not-found-h2 {
   font-size: 30px;
-  color: #666;
+  color: green;
   margin-bottom: 20px;
 }
 
