@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.8ce325c7.css",
-    "main.js": "/static/js/main.bd9c9aae.js",
+    "main.css": "/static/css/main.db209a92.css",
+    "main.js": "/static/js/main.77cb345e.js",
     "static/js/787.63fc713e.chunk.js": "/static/js/787.63fc713e.chunk.js",
+    "static/media/smart-colors.mp4": "/static/media/smart-colors.b09d5467b7d241dc904e.mp4",
     "static/media/Codes24.png": "/static/media/Codes24.b8b13deabeecd8473302.png",
     "static/media/Mixers24.png": "/static/media/Mixers24.0d6e844a15b7a593724c.png",
     "static/media/Gradients24.png": "/static/media/Gradients24.f91465d55b1b1c197f32.png",
     "static/media/Library24.png": "/static/media/Library24.307315cda7986405534c.png",
     "static/media/Contrast24.png": "/static/media/Contrast24.b87c53d615463feba694.png",
     "index.html": "/index.html",
-    "main.8ce325c7.css.map": "/static/css/main.8ce325c7.css.map",
-    "main.bd9c9aae.js.map": "/static/js/main.bd9c9aae.js.map",
+    "main.db209a92.css.map": "/static/css/main.db209a92.css.map",
+    "main.77cb345e.js.map": "/static/js/main.77cb345e.js.map",
     "787.63fc713e.chunk.js.map": "/static/js/787.63fc713e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ce325c7.css",
-    "static/js/main.bd9c9aae.js"
+    "static/css/main.db209a92.css",
+    "static/js/main.77cb345e.js"
   ]
 }
