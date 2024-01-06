@@ -99,6 +99,7 @@ footer {
   color: #ffffff;
   padding: 5px;
   text-align: center;
+  min-height: 100px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -120,6 +121,14 @@ footer {
   .menu-button {
     display: inline-block;
   }
+  .footer-links {
+    flex-direction: row; /* Reset to default row direction on smaller screens */
+    min-height: auto; /* Reset minimum height on smaller screens */
+  }
+
+  .footer-links a {
+    white-space: nowrap; /* Prevent wrapping for all links on smaller screens */
+  }
 }
 
 /* Additional styles for Home component */
@@ -133,11 +142,9 @@ footer {
 .box {
   width: 40%;
   padding: 20px;
-  margin: 10px;
+  margin: 5px;
   text-align: left;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .box:hover {
