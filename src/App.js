@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { HashRouter, Route, Routes, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import ColorInfo from './ColorInfo';
 import ColorLibrary from './ColorLibrary';
@@ -117,7 +117,7 @@ const Colorx = () => {
   ];
 
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop>
         <div className={`app-container ${menuOpen ? 'menu-open' : ''}`}>
           {/* ... (rest of the code) */}
@@ -194,7 +194,7 @@ const Colorx = () => {
         </footer>
         </div>
       </ScrollToTop>
-    </Router>
+    </HashRouter>
   );
 };
 
