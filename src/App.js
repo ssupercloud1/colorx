@@ -19,6 +19,8 @@ import ContrastImage from './Contrast24.png';
 import GradientsImage from './Gradients24.png';
 import MixersImage from './Mixers24.png';
 import LibraryImage from './Library24.png';
+import videoFile from './smart-colors.mp4';
+import NetworkImage from './Network24.png';
 
 const boxStyle = {
   padding: '10px',
@@ -42,6 +44,21 @@ const Home = () => (
         </p>
     <div className="container" style={{ maxWidth: '100%', display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
       {/* Your landing page content */}
+	  <div className="box" style={boxStyle}>
+        <h2>At A Glance</h2>
+        <p><Link to="/image-color">Color Extractor</Link> | <Link to="/contrast-checker">Contrast Checker</Link> | <Link to="/palette-generator">Palette Generator</Link> | <Link to="/color-info">Code Generator</Link> | <Link to="/color-gradient">Color Gradient</Link> | <Link to="/color-mix">Color Mixer</Link> | <Link to="/library">LIbrary</Link></p>
+        <img src={NetworkImage} alt="Network" style={imageStyle} />
+      </div>
+	  <div className="box" style={boxStyle}>
+        <h2>Color Extractor</h2>
+        <p>Effortlessly <Link to="/image-color">extract stunning color palettes</Link>, uncover captivating harmonies and gradients, and explore a limitless spectrum of creative possibilities with just a single upload.</p>
+        <p>Let Colorx be your guide to harmonious color combinations that elevate your designs, craft unique brand aesthetics that resonate with your audience, and inspire captivating artwork that reflects your unique style.</p>
+		<p>Start exploring boundless color possibilities today. Upload now and create with confidence.</p>
+		<video autoPlay controls loop width="100%">
+        <source src={videoFile} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      </div>
       <div className="box" style={boxStyle}>
         <h2>Palette Generator</h2>
         <p>Start using <Link to="/palette-generator">Palette Generator now</Link>. Create random palettes, gradient palettes, shades, tints, and tones. Once you're satisifed with your color palette, hit EXPORT button and find your palette in your downloads!</p>
@@ -132,17 +149,17 @@ const Colorx = () => {
             <Link to="/" onClick={closeMenu}>
               Home
             </Link>
-            <Link to="/color-info" onClick={closeMenu}>
-              Code Generator
-            </Link>
-            <Link to="/palette-generator" onClick={closeMenu}>
-              Palette Generator
-            </Link>
 			<Link to="/image-color" onClick={closeMenu}>
               Color Extractor
             </Link>
-            <Link to="/contrast-checker" onClick={closeMenu}>
+			<Link to="/contrast-checker" onClick={closeMenu}>
               Contrast Checker
+            </Link>
+			<Link to="/palette-generator" onClick={closeMenu}>
+              Palette Generator
+            </Link>
+            <Link to="/color-info" onClick={closeMenu}>
+              Code Generator
             </Link>
             <Link to="/color-gradient" onClick={closeMenu}>
               Color Gradient
@@ -178,7 +195,7 @@ const Colorx = () => {
         </Routes>
 
         <footer style={{ paddingTop: '30px' }}>
-          <div className="footer-links" style={{ justifyContent: 'center', paddingTop: '10px', display: 'flex', flex: 'wrap', gap: '10px' }}>
+          <div className="footer-links" style={{ justifyContent: 'center', paddingTop: '10px', display: 'flex', gap: '7px' }}>
             <Link to="/" onClick={closeMenu} style={{ color: 'white' }}>
               Home
             </Link>

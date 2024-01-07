@@ -107,7 +107,7 @@ class ColorMix extends React.Component {
     const { colors, currentColor, finalColor } = this.state;
 
     return (
-      <div style={{ textAlign: 'justified', padding: '10px', maxWidth: '80%', margin: 'auto', border: '1px solid #ccc', borderRadius: '7px' }}>
+      <div style={{ textAlign: 'justified', padding: '20px', maxWidth: '800px', margin: 'auto', border: '1px solid #ccc', borderRadius: '7px' }}>
         <h2 style={{ textAlign: 'center' }}>Color Mixer</h2>
         <p>
           This is an online color mixing tool that allows you to experiment with different color combinations, mixtures, and shades until you find the perfect palette for your artwork or design project.

@@ -4,12 +4,12 @@
   padding: 20px;
   border-radius: 5px;
   border: 2px solid #ccc;
-  max-width: 90%;
+  max-width: 80%;
   margin: auto;
   overflow: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .color-mixer-container {
     max-width: 100%;
   }

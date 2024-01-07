@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { extractColors } from 'extract-colors';
-import { SketchPicker } from 'react-color';
 import FileSaver from 'file-saver';
 import './ImageColor.css';
 import videoFile from './smart-colors.mp4';
 
 function ImageColor() {
   const [colors, setColors] = useState([]);
-  const [selectedColor, setSelectedColor] = useState(null);
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [showColorPicker, setShowColorPicker] = useState(false);
-  const [pickerPosition, setPickerPosition] = useState({ x: 0, y: 0 });
   const [showButtons, setShowButtons] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
 
   useEffect(() => {
     setShowButtons(colors.length > 0);
@@ -33,16 +28,6 @@ function ImageColor() {
     }
   };
 
-  const handleColorClick = (color, event) => {
-    setSelectedColor(color);
-    setShowColorPicker(true);
-    setPickerPosition({ x: event.clientX, y: event.clientY });
-  };
-
-  const handleColorPickerClose = () => {
-    setShowColorPicker(false);
-  };
-
   const handleExportPalette = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 300;
@@ -61,7 +46,6 @@ function ImageColor() {
 
   const handleReset = () => {
     setColors([]);
-    setSelectedColor(null);
     setUploadedImage(null);
     setShowButtons(false);
 
@@ -72,13 +56,6 @@ function ImageColor() {
     }
   };
 
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-  };
-
-  const handleReplay = () => {
-    setVideoEnded(false);
-  };
 return (
     <div className="image-color-container">
 	  <h2 style={{ textAlign: 'center' }}>Unlock the Colors Within Your Images</h2>
@@ -111,7 +88,6 @@ return (
             src={uploadedImage}
             alt="Uploaded"
             className="uploaded-image"
-            onClick={(e) => handleColorClick(null, e)}
           />
         </div>
       )}
@@ -130,18 +106,11 @@ return (
               margin: 'auto',
               marginBottom: '50px',
             }}
-            onClick={(e) => handleColorClick(color, e)}
           >
             <span className="color-label">{color.hex}</span>
           </div>
         ))}
       </div>
-
-      {selectedColor && showColorPicker && (
-        <div className="color-picker-container" style={{ position: 'absolute', top: pickerPosition.y, left: pickerPosition.x }}>
-          <SketchPicker color={selectedColor} onChangeComplete={handleColorPickerClose} />
-        </div>
-      )}
 
       {showButtons && (
         <div className="button-container" style={{ marginTop: '20px', marginBottom: '20px' }}>
