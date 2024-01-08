@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d97ce54e.css",
-    "main.js": "/static/js/main.a150f240.js",
+    "main.css": "/static/css/main.ee4cd325.css",
+    "main.js": "/static/js/main.9a8388d5.js",
     "static/js/787.63fc713e.chunk.js": "/static/js/787.63fc713e.chunk.js",
     "static/media/smart-colors.mp4": "/static/media/smart-colors.b09d5467b7d241dc904e.mp4",
     "static/media/Network24.png": "/static/media/Network24.76964ba907041f35f725.png",
@@ -11,12 +11,12 @@
     "static/media/Library24.png": "/static/media/Library24.307315cda7986405534c.png",
     "static/media/Contrast24.png": "/static/media/Contrast24.b87c53d615463feba694.png",
     "index.html": "/index.html",
-    "main.d97ce54e.css.map": "/static/css/main.d97ce54e.css.map",
-    "main.a150f240.js.map": "/static/js/main.a150f240.js.map",
+    "main.ee4cd325.css.map": "/static/css/main.ee4cd325.css.map",
+    "main.9a8388d5.js.map": "/static/js/main.9a8388d5.js.map",
     "787.63fc713e.chunk.js.map": "/static/js/787.63fc713e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d97ce54e.css",
-    "static/js/main.a150f240.js"
+    "static/css/main.ee4cd325.css",
+    "static/js/main.9a8388d5.js"
   ]
 }
