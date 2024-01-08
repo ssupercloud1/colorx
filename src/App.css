@@ -124,6 +124,7 @@ footer {
   .footer-links {
     min-height: auto; /* Reset minimum height on smaller screens */
 	gap: 4px;
+	align-items: center;
   }
 }
 

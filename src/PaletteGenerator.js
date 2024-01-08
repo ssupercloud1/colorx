@@ -31,9 +31,9 @@ const PaletteGenerator = () => {
       const selectedColors = shuffledColors.slice(0, numColors);
 
       const adjustedColors = selectedColors.map(([_, colorCode], index) => [
-        null, // No color name
+        null,
         chroma(colorCode).saturate(2).darken(0.5).hex(),
-        index === 0 || index === selectedColors.length - 1, // Check if it's the first or last color
+        index === 0 || index === selectedColors.length - 1,
       ]);
 
       setPaletteColors(adjustedColors);
@@ -98,7 +98,10 @@ const PaletteGenerator = () => {
   };
 
   const handleDocumentClick = (event) => {
-    if (paletteRef.current && !paletteRef.current.contains(event.target) && !event.target.classList.contains('color-picker-container')) {
+    const isColorPickerClick = event.target.closest('.color-picker-container');
+    const isPaletteClick = paletteRef.current && paletteRef.current.contains(event.target);
+
+    if (!isColorPickerClick && !isPaletteClick) {
       setColorPickerVisible(false);
     }
   };

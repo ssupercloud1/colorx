@@ -46,13 +46,13 @@ const Home = () => (
       {/* Your landing page content */}
 	  <div className="box" style={boxStyle}>
         <h2>At A Glance</h2>
-        <p><Link to="/image-color">Color Extractor</Link> | <Link to="/contrast-checker">Contrast Checker</Link> | <Link to="/palette-generator">Palette Generator</Link> | <Link to="/color-info">Code Generator</Link> | <Link to="/color-gradient">Color Gradient</Link> | <Link to="/color-mix">Color Mixer</Link> | <Link to="/library">LIbrary</Link></p>
+		<p>What we offer:</p>
+        <p><Link to="/image-color">Color Extractor</Link> | <Link to="/contrast-checker">Contrast Checker</Link> | <Link to="/palette-generator">Palette Generator</Link> | <Link to="/color-info">Code Generator</Link> | <Link to="/color-gradient">Color Gradient</Link> | <Link to="/color-mix">Color Mixer</Link> | <Link to="/library">Color LIbrary</Link></p>
         <img src={NetworkImage} alt="Network" style={imageStyle} />
       </div>
 	  <div className="box" style={boxStyle}>
         <h2>Color Extractor</h2>
         <p>Effortlessly <Link to="/image-color">extract stunning color palettes</Link>, uncover captivating harmonies and gradients, and explore a limitless spectrum of creative possibilities with just a single upload.</p>
-        <p>Let Colorx be your guide to harmonious color combinations that elevate your designs, craft unique brand aesthetics that resonate with your audience, and inspire captivating artwork that reflects your unique style.</p>
 		<p>Start exploring boundless color possibilities today. Upload now and create with confidence.</p>
 		<video autoPlay controls loop width="100%">
         <source src={videoFile} type="video/mp4" />
