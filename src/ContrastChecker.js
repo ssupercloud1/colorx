@@ -1,6 +1,6 @@
 // ContrastChecker.js
 import React, { useState, useEffect } from 'react';
-import { ChromePicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 
 const ContrastChecker = () => {
   const [textColor, setTextColor] = useState('#00FF00');
@@ -58,7 +58,7 @@ const ContrastChecker = () => {
         <div style={{ marginBottom: '10px' }}>
           <label style={{ color: '#333' }}>Text Color</label>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
-            <ChromePicker
+            <SketchPicker
               color={textColor}
               onChange={(color) => handleInputChange(color, true)}
             />
@@ -70,7 +70,7 @@ const ContrastChecker = () => {
         <div style={{ marginLeft: '20px', marginBottom: '10px' }}>
           <label style={{ color: '#333' }}>Background Color</label>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
-            <ChromePicker
+            <SketchPicker
               color={backgroundColor}
               onChange={(color) => handleInputChange(color, false)}
             />

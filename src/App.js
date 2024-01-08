@@ -195,7 +195,7 @@ const Colorx = () => {
         </Routes>
 
         <footer style={{ paddingTop: '30px' }}>
-          <div className="footer-links" style={{ justifyContent: 'center', paddingTop: '10px', display: 'flex', gap: '7px' }}>
+          <div className="footer-links" style={{ justifyContent: 'center', paddingTop: '10px', display: 'flex', gap: '5px' }}>
             <Link to="/" onClick={closeMenu} style={{ color: 'white' }}>
               Home
             </Link>

@@ -1,17 +1,18 @@
-// PaletteGenerator.js
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import ColorNames from './ColorNames';
 import './PaletteGenerator.css';
 import chroma from 'chroma-js';
 import domtoimage from 'dom-to-image';
-import GradientPalette from './GradientPalette';  // Import GradientPalette
+import GradientPalette from './GradientPalette';
 import ColorPalette from './ColorPalette';
+import { SketchPicker } from 'react-color';
 
 const PaletteGenerator = () => {
   const [paletteColors, setPaletteColors] = useState([]);
   const [numColors, setNumColors] = useState(5);
   const [manualColors, setManualColors] = useState('');
+  const [colorPickerVisible, setColorPickerVisible] = useState(false);
+  const [selectedColorIndex, setSelectedColorIndex] = useState(null);
   const paletteRef = useRef(null);
 
   const generatePalette = useCallback(() => {
@@ -29,9 +30,10 @@ const PaletteGenerator = () => {
       const shuffledColors = shuffleArray(allColorEntries);
       const selectedColors = shuffledColors.slice(0, numColors);
 
-      const adjustedColors = selectedColors.map(([_, colorCode]) => [
+      const adjustedColors = selectedColors.map(([_, colorCode], index) => [
         null, // No color name
         chroma(colorCode).saturate(2).darken(0.5).hex(),
+        index === 0 || index === selectedColors.length - 1, // Check if it's the first or last color
       ]);
 
       setPaletteColors(adjustedColors);
@@ -76,6 +78,39 @@ const PaletteGenerator = () => {
       .catch((error) => console.error('Error exporting PNG:', error));
   };
 
+  const handleColorClick = (index) => {
+    if (paletteColors[index]) {
+      setSelectedColorIndex(index);
+      setColorPickerVisible(true);
+    }
+  };
+
+  const handleColorPickerChange = (color) => {
+    if (paletteColors[selectedColorIndex]) {
+      const updatedColors = [...paletteColors];
+      updatedColors[selectedColorIndex][1] = color.hex || color;
+      setPaletteColors(updatedColors);
+    }
+  };
+
+  const handleColorPickerClose = () => {
+    setColorPickerVisible(false);
+  };
+
+  const handleDocumentClick = (event) => {
+    if (paletteRef.current && !paletteRef.current.contains(event.target) && !event.target.classList.contains('color-picker-container')) {
+      setColorPickerVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   return (
     <>
       <div className="palette-generator-container">
@@ -111,8 +146,12 @@ const PaletteGenerator = () => {
         </div>
 
         <div className="palette" ref={paletteRef} style={{ justifyContent: 'center', marginBottom: '20px' }}>
-          {paletteColors.map(([_, colorCode]) => (
-            <div key={colorCode} className="palette-color">
+          {paletteColors.map(([_, colorCode, isCornerColor], index) => (
+            <div
+              key={colorCode}
+              className={`palette-color${isCornerColor ? ' corner-color' : ''}`}
+              onClick={() => handleColorClick(index)}
+            >
               <div className="color-display" style={{ backgroundColor: colorCode, height: '200px', width: '50px', border: 'none', marginBottom: '0px' }}></div>
               <div>{colorCode}</div>
             </div>
@@ -127,6 +166,13 @@ const PaletteGenerator = () => {
         <div className="gradient-palette-container">
           <GradientPalette />
         </div>
+
+        {/* Color Picker */}
+        {colorPickerVisible && (
+          <div className="color-picker-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+            <SketchPicker color={paletteColors[selectedColorIndex][1]} onChange={handleColorPickerChange} onChangeComplete={handleColorPickerClose} />
+          </div>
+        )}
       </div>
     </>
   );

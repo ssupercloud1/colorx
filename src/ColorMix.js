@@ -7,10 +7,10 @@ class ColorMix extends React.Component {
     super(props);
     this.state = {
       colors: [
-        { hex: "#ff00ff", ratio: 50 },
-        { hex: "#00ff00", ratio: 50 },
+        { hex: "#ff0000", ratio: 50 },
+        { hex: "#0000ff", ratio: 50 },
       ],
-      currentColor: "#ff00ff",
+      currentColor: "#ff0000",
       finalColor: null,
     };
   }
